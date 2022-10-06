@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient py-3 sticky-top">
+    <div class="container-fluid px-5">
+        <a routerLink="/home" class="navbar-brand">
+            <span class="display-4 fw-bolder">XYZ CARS</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navDropdown" aria-controls="navDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navDropdown">
+            <div class="form-inline my-2 my-md-0 row">
+                <div class="input-group ms-4 col-12">
+                    <button type="button" class="btn btn-outline-dark text-white input-group-text bi bi-search">
+                        <span class ="ms-1 fw-normal">
+                            Search
+                        </span>
+                    </button>
+
+                    <input type="text" class="form-control position-relative" [(ngModel)]="search" style="max-width: 20rem;">
+                    <div class="bg-light col-12 my-1 position-absolute border top-100 rounded-3 search-dialog list-group-flush" *ngIf="search">
+                        <a *ngFor="let car of (cars|search :search)" (click)='unselectCar' (click)="clearSearch()" routerLink="/car-details/{{car.type}}/{{car.manufacturer}}/{{car.model}}" class="list-group-item list-group-item-light list-group-item-action">
+                            {{car.model}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--   d-md-flex justify-content-md-end -->
+            <ul class="navbar-nav mx-auto me-5 mt-5">
+                <li class="nav-item px-2 h5 fw-bold" *ngFor="let navbuttons of navigationButton">
+                    <a class="nav-link text-uppercase" aria-current="page" routerLink="{{navbuttons.router}}">{{navbuttons.name}}</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- collapsible nav bar -->
+    </div>
+    <!--container fluid-->
+</nav>
+<!-- Nav bar -->

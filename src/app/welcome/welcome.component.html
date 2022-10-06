@@ -1,0 +1,31 @@
+<div class="card border-0 border rounded-3">
+    <div class="card-body position-relative bg bg-dark" style="height: 80rem;">
+        <div class="position-absolute bg-light bg-gradient bg-opacity-10 start-50 top-0 translate-middle-x w-100 h-100">
+            <img src="../../assets/car background.jpg" class="w-100 h-100 opacity-25 d-none d-md-block">
+        </div>
+        <div class="position-absolute bottom-0 start-0 text-light ps-5 pt-4  w-100 h-100">
+            <h1 class="display-1 fw-bold text-uppercase" style="text-shadow: 0.5rem 0.5rem 2rem rgb(0, 0, 0);">Welcome</h1>
+            <h3 class="display-5 fw-bold text-uppercase" style="text-shadow: 0.5rem 0.5rem 2rem rgb(0, 0, 0);">To XYZ Cars</h3>
+            <div class="position-absolute end-0 bottom-0 translate-middle-y px-4 w-50">
+                <div class="display-6 row text-end pe-5">
+                    <div class="col-12" *ngFor="let tagline of tagLines">
+                        <span class="fw-bold" style="text-shadow: 0.5rem 0.5rem 2rem rgb(0, 0, 0);">{{tagline.name}}, </span>
+                        <span style="text-shadow: 0.5rem 0.5rem 1rem rgb(0, 0, 0);">{{tagline.description}}.</span>
+                    </div>
+                    <div class="col-12 mt-5">
+                        <button type="button" class="btn btn-outline-danger p-3 text-uppercase border-danger border-0 rounded-3" style="font-size: 2rem;">
+                           <span> Learn More </span>
+                           <span id="symbol" class ="ms-1 bi bi-chevron-double-right displaySymbol"></span>
+                        </button>
+                    </div>
+                </div>
+                <!--Row div-->
+            </div>
+            <!--description div-->
+        </div>
+        <!--text div-->
+
+    </div>
+    <!--body content-->
+</div>
+<!--main container-->

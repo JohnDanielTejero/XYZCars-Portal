@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-body" style="min-height: 20rem;">
+
+        <div class="row p-5" *ngIf="!carDetails">
+            <div class="col-12 p-5 d-flex justify-content-center">
+                <span class="display-3 text-black-50 text-center text-uppercase">
+                    The car you're searching for does not exist or has been removed...
+                </span>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row" style="z-index: 1;">
+                <div class="col-12 col-lg-5 overflow-hidden">
+                    <img [src]=" carDetails.imgsrc" class="w-100 h-auto">
+                </div>
+                <div class="col-12 col-lg-7 px-5 py-2">
+                    <div class="row gy-3 py-5 px-2">
+                        <div class="col-12 d-flex justify-content-lg-start justify-content-center">
+                            <span class="h2">{{carDetails.model}}</span>
+                        </div>
+                        <div class="col-12 d-flex justify-content-lg-start justify-content-center">
+                            <span class="h2">{{carDetails.manufacturer}}</span>
+                        </div>
+                        <div class="col-12 d-flex justify-content-lg-start justify-content-center">
+                            <span class="h5">{{carDetails.type}}</span>
+                        </div>
+                        <div class="col-12 d-flex justify-content-lg-start justify-content-center">
+                            <span class="h5 fw-light"><strong class="fw-bold">Price: </strong>{{carDetails.price}}</span>
+                        </div>
+                        <div class="col-12 d-flex justify-content-lg-start justify-content-center">
+                            <span style="font-size: 1.3rem;">{{carDetails.description}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
