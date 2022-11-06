@@ -11,9 +11,11 @@ const routes: Routes = [
   {path:"car-details/:type/:manufacturer/:model", component:CarDetailsComponent}
 ];
 
+const routing = RouterModule.forRoot(routes);
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [routing],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
-export const routing = RouterModule.forRoot(routes);
+export class AppRoutingModule {
+
+}

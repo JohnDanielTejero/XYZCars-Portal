@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
 
 export class CarSelectService{
 
-  carDetails = '';
-  carSelect:string = '';
   cars:any = [{
     "model": "2022 Nissan Versa",
     "type": "Sedan",
@@ -79,37 +77,20 @@ export class CarSelectService{
     "price": "$38,690"
 }]
 
-  
+
   get(){
     return this.cars;
   }
 
   selectCar(selected:string){
-    if (selected ==""){
-      this.carSelect = "";
-    }else{
-      this.carSelect = selected;
+    for (const car of this.cars) {
+      if (car.model == selected){
+        return car;
+      };
     }
+
 }
 
-clearSelection(){
-  this.carSelect='';
-}
-
-  getSelectedCar(){
-    return this.carSelect;
-  }
-
-  displayCar(selectedCar:string){
-    let Carsprompt:any;
-    this.cars.forEach(function(car:any){
-      if (car.model == selectedCar){
-        Carsprompt = car;
-      }
-    });
-    this.carDetails = Carsprompt;
-    return this.carDetails;
-  }
 
 }
 

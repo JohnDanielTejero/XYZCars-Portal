@@ -7,11 +7,11 @@ import { CarSelectService } from '../car-select.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
+
   search:any = "";
   cars:any =[];
   navigationButton :Array<any>;
-  constructor(private http :HttpClient, private carslist:CarSelectService) { 
+  constructor(private http :HttpClient, private carslist:CarSelectService) {
     this.navigationButton = [
       {
         "name" : "home",
@@ -30,15 +30,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
    this.cars = this.carslist.get();
   }
-  
+
   clearSearch(){
     this.search="";
-  }
-  selectCar(car:any){
-    this.carslist.selectCar(car);
-  }
-
-  unselectCar(){
-    this.carslist.clearSelection();
   }
 }
